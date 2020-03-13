@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdbool.h>
 
 // Média Simples
 float mediaSimples (float x1, float x2) {
