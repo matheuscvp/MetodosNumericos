@@ -10,7 +10,7 @@ float mediaSimples (float x1, float x2) {
 // Adicione as funções aqui
 float imagemFuncao (float x) {
     // x^2 - 8x + 6
-    // return pow(x, 2.0) - 8 * x + 6;
+    return pow(x, 2.0) - 8 * x + 6;
 
     // -x^6 + x^3 -x
     // return - pow(x, 6.0) + pow(x, 3.0) - x;
@@ -25,7 +25,7 @@ float imagemFuncao (float x) {
     // return pow(x, 10.0) - 1;
 
     // 4x^3 - 6x^2 + 7x - 2.3
-    return 4 * pow(x, 3.0) - 6 * pow(x, 2.0) + 7 * x - 2.3;
+    // return 4 * pow(x, 3.0) - 6 * pow(x, 2.0) + 7 * x - 2.3;
 
 }
 
@@ -50,24 +50,25 @@ void bisseccao (int interacao, float limiteA, float fA, float limiteB, float fB,
         case 1:
             limiteA = xMed;
             fA = fX;
-            erro = (fA - fXAnterior) / fA;
+            erro = (limiteA - fXAnterior) / limiteA;
+            fXAnterior = limiteA;
             break;
 
         case 0:
             limiteB = xMed;
             fB = fX;
-            erro = (fB - fXAnterior) / fB;
+            erro = (limiteB - fXAnterior) / limiteB;
+            fXAnterior = limiteB;
             break;
     }
 
     erro < 0 ? erro *= (-1) : erro;
-    printf("Erro percentual: %.9f e fXAnterior: %.9f\n", erro, fXAnterior);
+    printf("Erro percentual: %.9f%% e fXAnterior: %.9f\n", erro * 100, fXAnterior);
 
     // Checagem pra ver se o erro é próximo a zero
     // Se não, a função se repete recursivamente
     if (erro > ERRO_MAX) {
         printf("[a: %.9f; b: %.9f], %d interacao\n\n", limiteA, limiteB, interacao);
-        fXAnterior = fX;
         bisseccao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, fXAnterior);
     }
 
@@ -81,7 +82,7 @@ int main (int argc, char *argv[]) {
     float limiteA, limiteB;
     float fA, fB;
     int interacao = 0;
-    const float ERRO_MAX = 1e-7;
+    const float ERRO_MAX = 1e-6;
 
     // Leitura dos limites
     scanf("%f %f", &limiteA, &limiteB);
