@@ -1,6 +1,7 @@
 # Métodos Numéricos só dos mais brabors
 
-Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=195413) com o objetivo de facilitar a matéria.
+Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=195413) com os métodos aprendidos no semestre.
+
 |Método numérico|Código no repositório|
 | ------ | ------ |
 |Bissecção|✅|
