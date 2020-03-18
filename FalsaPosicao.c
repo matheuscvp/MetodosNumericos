@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-// Média Simples
-float mediaSimples (float x1, float x2) {
-    return (x1 + x2) / 2;
+float semelhancaTriangulos (float limiteA, float limiteB, float fA, float fB) {
+    return limiteB - (fB * (limiteA - limiteB) / (fA - fB));
 }
 
 // Método responsável pelo cálculo do f(x)
@@ -26,35 +25,35 @@ float imagemFuncao (float x) {
 
     // 4x^3 - 6x^2 + 7x - 2.3
     return 4 * pow(x, 3.0) - 6 * pow(x, 2.0) + 7 * x - 2.3;
-
 }
 
-// Lógica do método da bissecção
-void bisseccao (int interacao, float limiteA, float fA, float limiteB, float fB, float ERRO_MAX, float fXAnterior) {
+void falsaPosicao (int interacao, float limiteA, float fA, float limiteB, float fB, float ERRO_MAX, float fXAnterior) {
     int bolzano;
     float erro;
-    float xMed;
+    float x;
     float fX;
 
     interacao++;
 
-    // Calcula valor médio e acha seu f(x)
-    xMed = mediaSimples(limiteA, limiteB);
-    fX = imagemFuncao(xMed);
-    printf ("xMed: %.9f, fX: %.9f\n", xMed, fX);
+    // Calcula valor da semelhança de triangulos e acha seu f(x)
+    x = semelhancaTriangulos(limiteA, limiteB, fA, fB);
+    fX = imagemFuncao(x);
+    printf ("x: %.9f, fX: %.9f\n", x, fX);
 
     // Teorema de Bolzano
     bolzano = (fA * fX > 0 ? 1:0);
     printf ("Bolzano: %d\n", bolzano);
     switch (bolzano) {
         case 1:
-            limiteA = xMed;
+            limiteA = x;
+            // fXAnterior = fA;
             fA = fX;
             erro = (fA - fXAnterior) / fA;
             break;
 
         case 0:
-            limiteB = xMed;
+            limiteB = x;
+            // fXAnterior = fB;
             fB = fX;
             erro = (fB - fXAnterior) / fB;
             break;
@@ -68,7 +67,7 @@ void bisseccao (int interacao, float limiteA, float fA, float limiteB, float fB,
     if (erro > ERRO_MAX) {
         printf("[a: %.9f; b: %.9f], %d interacao\n\n", limiteA, limiteB, interacao);
         fXAnterior = fX;
-        bisseccao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, fXAnterior);
+        falsaPosicao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, fXAnterior);
     }
 
     // Se sim, printa o ultimo valor aproximado e o total de interações
@@ -91,7 +90,7 @@ int main (int argc, char *argv[]) {
     fB = imagemFuncao(limiteB);
 
     // Função recursiva responsável pela resposta
-    bisseccao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, 0);
+    falsaPosicao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, 0);
 
     return 0;
 }
