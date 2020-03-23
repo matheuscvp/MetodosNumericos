@@ -74,7 +74,7 @@ void bisseccao (int interacao, float limiteA, float fA, float limiteB, float fB,
 
     // Se sim, printa o ultimo valor aproximado e o total de interações
     else {
-        printf("Valor aproximado [a: %.9f; b: %.9f], em %d interacoes", limiteA, limiteB, interacao);
+        printf("Valor aproximado [a: %.9f; b: %.9f], em %d interacoes\n", limiteA, limiteB, interacao);
     }
 }
 
@@ -84,12 +84,19 @@ int main (int argc, char *argv[]) {
     int interacao = 0;
     const float ERRO_MAX = 1e-6;
 
-    // Leitura dos limites
-    scanf("%f %f", &limiteA, &limiteB);
+    do {
+         // Leitura dos limites
+        scanf("%f %f", &limiteA, &limiteB);
 
-    // Valores jogados na função de forma a achar o f(x)
-    fA = imagemFuncao(limiteA);
-    fB = imagemFuncao(limiteB);
+        // Valores jogados na função de forma a achar o f(x)
+        fA = imagemFuncao(limiteA);
+        fB = imagemFuncao(limiteB);
+
+        if ((fA * fB) > 0) {
+            printf("Não existe raiz neste intervalo, digite-os novamente\n");
+        }
+
+    } while ((fA * fB) > 0);
 
     // Função recursiva responsável pela resposta
     bisseccao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, 0);

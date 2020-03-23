@@ -3,7 +3,7 @@
 
 // Semelhança simples de triangulos
 float semelhancaTriangulos (float limiteA, float limiteB, float fA, float fB) {
-    return limiteB - (fB * (limiteA - limiteB) / (fA - fB));
+    return ((limiteA * fB) - (limiteB * fA)) / (fB - fA);
 }
 
 // Método responsável pelo cálculo do f(x)
@@ -38,6 +38,8 @@ void falsaPosicao (int interacao, float limiteA, float fA, float limiteB, float 
     float fX;
 
     interacao++;
+
+    printf("fA: %.9f, e fB: %.9f\n", fA, fB);
 
     // Calcula valor da semelhança de triangulos e acha seu f(x)
     x = semelhancaTriangulos(limiteA, limiteB, fA, fB);
@@ -75,7 +77,7 @@ void falsaPosicao (int interacao, float limiteA, float fA, float limiteB, float 
 
     // Se sim, printa o ultimo valor aproximado e o total de interações
     else {
-        printf("Valor aproximado [a: %.9f; b: %.9f], em %d interacoes", limiteA, limiteB, interacao);
+        printf("Valor aproximado [a: %.9f; b: %.9f], em %d interacoes\n", limiteA, limiteB, interacao);
     }
 }
 
@@ -85,12 +87,19 @@ int main (int argc, char *argv[]) {
     int interacao = 0;
     const float ERRO_MAX = 1e-6;
 
-    // Leitura dos limites
-    scanf("%f %f", &limiteA, &limiteB);
+    do {
+         // Leitura dos limites
+        scanf("%f %f", &limiteA, &limiteB);
 
-    // Valores jogados na função de forma a achar o f(x)
-    fA = imagemFuncao(limiteA);
-    fB = imagemFuncao(limiteB);
+        // Valores jogados na função de forma a achar o f(x)
+        fA = imagemFuncao(limiteA);
+        fB = imagemFuncao(limiteB);
+
+        if ((fA * fB) > 0) {
+            printf("Nao existe raiz neste intervalo, digite-os novamente\n");
+        }
+
+    } while ((fA * fB) > 0);
 
     // Função recursiva responsável pela resposta
     falsaPosicao (interacao, limiteA, fA, limiteB, fB, ERRO_MAX, 0);
