@@ -6,7 +6,7 @@ Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/gradu
 | ------ | ------ |
 |Bissecção|✅|
 |Método da Falsa Posição|✅|
-|Método de Newton Raphson|❌|
+|Método de Newton Raphson|✅|
 |Método Secante|❌|
 |Método da Secante Modificado|❌|
 |Método do Ponto Fixo|❌|
