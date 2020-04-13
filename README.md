@@ -2,12 +2,16 @@
 
 Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=195413) com os métodos aprendidos no semestre.
 
+TODO: adicionar métodos mais eficientes para a continuação do programa
+ex: 
+- Limitar a quantidade de interações
+
 |Método numérico|Código no repositório|
 | ------ | ------ |
 |Bissecção|✅|
 |Método da Falsa Posição|✅|
 |Método da Falsa Posição Modificado|✅|
-|Método de Newton Raphson|❌|
+|Método de Newton Raphson|✅|
 |Método Secante|❌|
 |Método da Secante Modificado|❌|
 |Método do Ponto Fixo|❌|
@@ -47,4 +51,4 @@ Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/gradu
 |Método de Heun|❌|
 |Método do Midpoint|❌|
 |Método de Ralston|❌|
-|Método deRunge-Kutta 3ª e 4ª ordem|❌|
+|Método de Runge-Kutta 3ª e 4ª ordem|❌|

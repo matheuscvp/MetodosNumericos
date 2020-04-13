@@ -31,6 +31,10 @@ float imagemFuncao (float x) {
     // return cos(x) - x;
 }
 
+float calculaErro (float a, float b) {
+    return (a - b) / a;
+}
+
 void falsaPosicao (int interacao, float limiteA, float fA, float limiteB, float fB, float ERRO_MAX, float fXAnterior) {
     int bolzano;
     float erro;
@@ -53,14 +57,14 @@ void falsaPosicao (int interacao, float limiteA, float fA, float limiteB, float 
         case 1:
             limiteA = x;
             fA = fX;
-            erro = (limiteA - fXAnterior) / limiteA;
+            erro = calculaErro(limiteA, fXAnterior);
             fXAnterior = limiteA;
             break;
 
         case 0:
             limiteB = x;
             fB = fX;
-            erro = (limiteB - fXAnterior) / limiteB;
+            erro = calculaErro(limiteB, fXAnterior);
             fXAnterior = limiteB;
             break;
     }
