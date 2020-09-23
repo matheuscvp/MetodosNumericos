@@ -5,7 +5,7 @@
 // Adicione as derivadas aqui
 float derivadaFuncao (float x) {
     // 2x - 8
-    return 2*x - 8;
+    // return 2*x - 8;
 
     // 3x^2 - 4
     // return 3 * pow(x, 2.0) - 4;
@@ -19,7 +19,7 @@ float imagemFuncao (float x) {
     // return pow(x, 3.0) - 4 * x + 2;
 
     // x^2 - 8x + 6
-    return pow(x, 2.0) - 8 * x + 6;
+    // return pow(x, 2.0) - 8 * x - 2;
 
     // -x^6 + x^3 -x
     // return - pow(x, 6.0) + pow(x, 3.0) - x;

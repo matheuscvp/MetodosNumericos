@@ -10,7 +10,7 @@ float mediaSimples (float x1, float x2) {
 // Adicione as funções aqui
 float imagemFuncao (float x) {
     // x^2 - 8x + 6
-    return pow(x, 2.0) - 8 * x + 6;
+    return pow(x, 2.0) - 8 * x - 2;
 
     // -x^6 + x^3 -x
     // return - pow(x, 6.0) + pow(x, 3.0) - x;
@@ -96,7 +96,7 @@ int main (int argc, char *argv[]) {
         fB = imagemFuncao(limiteB);
 
         if ((fA * fB) > 0) {
-            printf("Não existe raiz neste intervalo, digite-os novamente\n");
+            printf("Nao existe raiz neste intervalo, digite-os novamente\n");
         }
 
     } while ((fA * fB) > 0);

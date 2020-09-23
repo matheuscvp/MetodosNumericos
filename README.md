@@ -12,13 +12,13 @@ ex:
 |Método da Falsa Posição|✅|
 |Método da Falsa Posição Modificado|✅|
 |Método de Newton Raphson|✅|
-|Método Secante|❌|
-|Método da Secante Modificado|❌|
-|Método do Ponto Fixo|❌|
+|Método Secante|✅|
+|Método da Secante Modificado|✅|
+|Método do Ponto Fixo|✅|
 |Erros de Truncamento|❌|
 |Erros de Arredondamento|❌|
-|Representação binária de números inteiros e aritmética de complemento 2|❌|
-|Representação de Ponto Flutuante|❌|
+|Representação binária de números inteiros e aritmética de complemento 2|✅|
+|Representação de Ponto Flutuante|✅|
 |Épsilon da máquina|❌|
 |Regra de Cramer|❌|
 |Eliminação de Gauss|❌|
