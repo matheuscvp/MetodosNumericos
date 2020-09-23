@@ -2,10 +2,6 @@
 
 Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=195413) com os métodos aprendidos no semestre.
 
-TODO: adicionar métodos mais eficientes para a continuação do programa
-ex: 
-- Limitar a quantidade de interações
-
 |Método numérico|Código no repositório|
 | ------ | ------ |
 |Bissecção|✅|
