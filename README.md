@@ -15,6 +15,7 @@ Repositório da matéria [Métodos Numéricos](https://matriculaweb.unb.br/gradu
 |Erros de Arredondamento|❌|
 |Representação binária de números inteiros e aritmética de complemento 2|✅|
 |Representação de Ponto Flutuante|✅|
+|Soma de Ponto Flutuante|✅|
 |Épsilon da máquina|❌|
 |Regra de Cramer|❌|
 |Eliminação de Gauss|❌|
